@@ -1,0 +1,271 @@
+@import url('global.css');
+
+/* Para criar o stroke do título <Great Code />
+text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button); */
+
+/* geral */
+
+body{
+    background-color: var(--backgrond);
+    width: 100%;
+    height: 100vh;
+}
+
+.b-blur__mobile{
+    display: none;
+    position: absolute;
+    bottom: 0;
+}
+
+.b-blur__desktop{
+    position: absolute;
+    bottom: 0;
+    width: 60%;
+    max-height: 70%;
+}
+.b-blur__desktop:first-child{
+    right: 0;
+    top: 0;
+}
+
+/* header */
+
+.h-container{
+    position: relative;
+    margin: 0 auto;
+    max-width: 80vw;
+    display: flex;
+}
+
+.h-wrapper__desktop{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.25rem .5rem;
+}
+
+.h-navbar__desktop ul{
+    display: flex;
+    margin-left: 1.75rem;
+}
+
+.h-navbar__desktop ul li{
+    margin-left: 2.75rem;
+}
+.h-navbar__desktop ul li:first-child{
+    margin-left: 0;
+}
+
+.h-navbar__desktop ul li a, .h-navbar__mobile ul li a{
+    box-shadow: inset 0 0 0 0 var(--button);
+    border-radius: 3px;
+    transition: ease-in-out 300ms;
+    padding: 2px;
+    color: var(--text-color);
+}
+
+.h-button{
+    width: 172px;
+    height: 37px;
+    color: var(--text-color);
+    border:  1px solid var(--button);
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: .75rem;
+    overflow-x: hidden;
+    background: transparent;
+    background-position: -500px;
+    box-shadow: inset 0 0 0 0 var(--button);
+    transition: ease-in-out 200ms;
+}
+.h-button:hover, .h-navbar__desktop ul li a:hover{
+    box-shadow: inset 172px 0px 0px 0px var(--button);
+}
+
+/* header mobile */
+.h-menu{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.h-wrapper__mobile{
+    width: 100%;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.25rem 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.h-navbar__mobile{
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    top: 111px;
+    left: 0;
+    display: flex;
+    gap: 1rem;
+    height: 0;
+    background-color: var(--backgrond);
+    z-index: 1000;
+    overflow-y: hidden;
+    transition: 300ms;
+}
+
+.h-navbar__mobile ul{
+    width: 100%;
+}
+
+.h-navbar__mobile ul li{
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-menu-mobile);
+    border-left: 5px solid transparent;
+}
+
+.h-navbar__mobile ul li a{
+    padding-left: 1rem;
+    color: var(--text-color-menu-mobile);
+}
+
+.active{
+    overflow-y: auto;
+    height: calc(100vh - 111px);
+    visibility: visible;
+}
+
+.close{
+    display: none;
+}
+/* main */
+
+.m-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-height: calc(100vh - 159px);
+}
+
+.m-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 1rem;
+}
+
+.m-titles{
+    text-align: center;
+}
+
+.m-wrapper h1, h2{
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 5rem;
+
+}
+.m-wrapper h2{
+    color: var(--backgrond);
+    text-shadow:-1px -1px 0 var(--button),
+                1px -1px 0 var(--button), 
+                -1px 1px 0 var(--button),
+                1px 1px 0 var(--button);
+}
+
+.m-wrapper img{
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    max-width: 50vw;
+    min-width: 700px;
+    z-index: 0;  
+}
+
+.m-wrapper > .h-button{
+    display: none;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1001;
+}
+
+.m-wrapper > .h-button span{
+    margin-right: 10px;
+}
+
+.m-wrapper p{
+    display: none;
+    text-align: center;
+    max-width: 300px;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--text-color);
+    padding-top: 4rem;
+}
+
+@media (max-width: 970px){
+    /* header */
+    .h-container{
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .h-wrapper__desktop{
+        display: none;
+    }
+
+    .h-wrapper__mobile{
+        display: flex;
+    }
+}
+@media (max-width: 700px){
+    .b-blur__desktop{
+        display: none;   
+    }
+    .b-blur__mobile{
+        display: block;
+        width: 100%;
+    }
+
+
+    /* main */
+
+    .m-container{
+        height: calc(100vh - 179px);
+        align-items: center;
+        
+    }
+
+    .m-wrapper{
+        flex-direction: column;
+    }
+
+    .m-wrapper h1{
+        margin-top: 3rem;
+    }
+
+    .m-wrapper h1, h2{
+        text-align: center;
+        font-size: 3rem;   
+    }
+
+    .m-wrapper img{
+        min-width: 400px;
+        max-width: 70vw;
+    }
+
+    .m-wrapper > .h-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .m-wrapper p{
+        display: block;
+    }
+}
