@@ -17,6 +17,7 @@
 # Sobre
 
 - A ideia do projeto é desenvolver uma homepage para uma marca de café.
+- Este projeto foi feito para o challenge da <a href="https://app.rocketseat.com.br/discover/challenges/rocketcoffee">Rocketseat<a>
 - Se você encontrar algum bug ou quiser me dar alguma dica fique a vontade para me chamar no email: ythiagohcfidencio@gmail.com
  
 # Tecnologias
